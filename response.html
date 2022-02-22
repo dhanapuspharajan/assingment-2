@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <h1 id="data_from_form">name</h1>
+
+    <!-- <h1 id="parameters"></h1> -->
+    <br>
+    <br>
+    <br>
+    <h3>JS Code to get the data from Get Method :</h3>
+
+
+    <pre style="font-size: large;
+    font-family:'Lucida Sans', 'Lucida Sans Regular',
+     'Lucida Grande', 'Lucida Sans Unicode', Geneva, 
+     Verdana, sans-serif;">
+        var parameters =location.search.substring(1).split("&");         -----> <b id="parameters"></b>
+
+        var data ="";                                                 ---> <b>create varialble as data</b>
+        for(x in parameters){                                        
+            var temp = parameters[x].split("=");                      -----> <b id="split"></b>
+            the_var =unescape(temp[0]);                               ------> <b id="the_var"></b>
+            the_value =unescape(temp[1]);                             ------> <b id="the_value"></b>
+            the_value = the_value.replace("+", "");                   ------> <b id="thevalue"></b>
+            data += the_var + "=" + the_value + " <b>here put br tag for seperation</b> ";  finally data getten as above//
+        }
+        document.getElementById("data_from_form").innerHTML = data;
+        
+    </pre>
+
+ <script>
+        window.onload = function(){
+        //    
+        var parameters =location.search.substring(1).split("&");
+
+        var data ="";
+        for(x in parameters){
+            var temp = parameters[x].split("=");
+            thevar =unescape(temp[0]);
+            thevalue =unescape(temp[1]);
+            thevalue = thevalue.replace("+", "");
+            data += thevar + "=" + thevalue + "<br>";
+        }
+        document.getElementById("data_from_form").innerHTML = data;
+        document.getElementById("parameters").innerHTML = parameters;
+        document.getElementById("split").innerHTML = temp;
+        document.getElementById("the_var").innerHTML = thevar;
+        document.getElementById("the_value").innerHTML = thevalue;
+    
+    }
+ </script>
+
+<ul type="none">
+    <li>
+        <img src="./images/left-arrow.png" 
+        style="width: 14px;height: 14px;">
+        <a href="./index.html">Go back</a>
+    </li>
+</ul>
+
+</body>
+</html>

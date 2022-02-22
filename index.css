@@ -1,0 +1,28 @@
+
+
+/* .iconshow a:hover{ 
+
+    display: inline;
+    text-shadow: 0px 0px 3px rgb(155, 240, 243);
+    font-size: large;
+} */
+
+ul li{
+    display: inline;
+    transition: all ease 0.5%;
+
+}
+
+img{
+    opacity: 0;
+    transition: all ease 1s;
+}
+
+ul li:hover img{
+    opacity: 100%;
+}
+
+ul li:hover a{
+    text-shadow: 0px 0px 3px rgb(155, 240, 243);
+    font-size: large;
+}
